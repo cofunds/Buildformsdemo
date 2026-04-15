@@ -34,7 +34,6 @@
         var formMatch = path.match(/^\/f\/([^/?#]+)/);
         var workspaceMatch = path.match(/^\/w\//);
         var ogImage = ogBase;
-        var title;
 
         function safeDecodeSegment(segment) {
           try {
@@ -46,9 +45,6 @@
 
         if (formMatch) {
           ogImage = ogBase + "?slug=" + encodeURIComponent(safeDecodeSegment(formMatch[1]));
-          title = "Form | BuildForms";
-        } else if (workspaceMatch) {
-          title = "Workspace | BuildForms";
         }
 
         if (!formMatch && !workspaceMatch) return;
@@ -62,10 +58,9 @@
         setMeta('meta[name="twitter:image"]', "content", ogImage);
         setMeta('meta[property="og:url"]', "content", location.href);
         setMeta('link[rel="canonical"]', "href", location.href);
-        if (title) {
-          setMeta('meta[property="og:title"]', "content", title);
-          setMeta('meta[name="twitter:title"]', "content", title);
-        }
+        /* og:title / twitter:title come from HTML on production (Edge middleware + beta
+           generateMetadata). Do not overwrite here or client-side would hide the real
+           form title before redirect. */
       })();
     </script>
 
