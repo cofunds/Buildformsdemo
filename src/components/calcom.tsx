@@ -7,6 +7,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { usePostHog } from "@posthog/react";
 import {
   Dialog,
   DialogContent,
@@ -59,7 +60,11 @@ const BookDemoContext = createContext<BookDemoContextValue | null>(null);
 
 export function BookDemoProvider({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
-  const openBookDemo = useCallback(() => setOpen(true), []);
+  const posthog = usePostHog();
+  const openBookDemo = useCallback(() => {
+    posthog?.capture("demo_booking_opened");
+    setOpen(true);
+  }, [posthog]);
 
   const value = useMemo(() => ({ openBookDemo }), [openBookDemo]);
 
