@@ -7,7 +7,13 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
             <div className="flex items-center gap-2">
-              <img src="/logo.png" alt="BuildForms" className="h-6 w-auto" />
+              <img
+                src="/logo.png"
+                alt="BuildForms"
+                width={140}
+                height={28}
+                className="h-6 w-auto"
+              />
               <p className="font-display font-bold text-base sm:text-lg text-foreground">BuildForms</p>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground mt-1">Hiring, unified.</p>

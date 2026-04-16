@@ -1,13 +1,6 @@
 import { useEffect } from "react";
 import { trackSectionView } from "@/lib/analytics";
-
-const TRACKED_SECTIONS = [
-  "problem",
-  "features",
-  "why-different",
-  "book-a-demo",
-  "faq",
-];
+import { LANDING_SECTIONS } from "@/lib/landingSections";
 
 export function useSectionTracking() {
   useEffect(() => {
@@ -19,14 +12,16 @@ export function useSectionTracking() {
           const id = entry.target.id;
           if (entry.isIntersecting && !seen.has(id)) {
             seen.add(id);
-            trackSectionView(id);
+            trackSectionView(id, {
+              intersectionRatio: entry.intersectionRatio,
+            });
           }
         });
       },
       { threshold: 0.3 }
     );
 
-    TRACKED_SECTIONS.forEach((id) => {
+    LANDING_SECTIONS.forEach(({ id }) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });

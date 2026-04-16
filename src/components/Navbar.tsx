@@ -37,7 +37,13 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between h-14 sm:h-16 section-padding">
         <a href="#" className="flex items-center gap-2 font-display font-bold text-lg sm:text-xl tracking-tight text-foreground">
-          <img src="/logo.png" alt="BuildForms" className="h-6 sm:h-7 w-auto" />
+          <img
+            src="/logo.png"
+            alt="BuildForms"
+            width={140}
+            height={28}
+            className="h-6 sm:h-7 w-auto"
+          />
           BuildForms
         </a>
 

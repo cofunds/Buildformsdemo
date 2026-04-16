@@ -25,7 +25,7 @@ const features: Feature[] = [
     title: "Create your pipeline",
     desc: "Set up stages, criteria, and workflows in minutes.",
     image: {
-      src: "/images/hiring-pipeline.png",
+      src: "/images/hiring-pipeline.jpg",
       alt: "BuildForms hiring pipeline: candidate submissions with stages, search, and columns.",
       width: 3144,
       height: 2036,
@@ -36,7 +36,7 @@ const features: Feature[] = [
     title: "Collect applications",
     desc: "Branded forms candidates actually want to fill out.",
     image: {
-      src: "/images/collect-applications.png",
+      src: "/images/collect-applications.jpg",
       alt: "BuildForms application form for collecting candidate details.",
       width: 3144,
       height: 2036,
@@ -47,7 +47,7 @@ const features: Feature[] = [
     title: "Evaluate with AI",
     desc: "Instant scoring, summaries, and red flag detection.",
     image: {
-      src: "/images/ai-evaluate.png",
+      src: "/images/ai-evaluate.jpg",
       alt: "BuildForms AI evaluation for candidate details.",
       width: 3144,
       height: 2036,
@@ -58,7 +58,7 @@ const features: Feature[] = [
     title: "Communicate",
     desc: "Email candidates directly. No more tab juggling.",
     image: {
-      src: "/images/communicate.png",
+      src: "/images/communicate.jpg",
       alt: "BuildForms communication for candidate details.",
       width: 3144,
       height: 2036,
